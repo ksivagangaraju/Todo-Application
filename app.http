@@ -1,0 +1,63 @@
+//Get todos with status API
+GET http://localhost:3000/todos/?status=TO%20DO
+###
+
+//Get todos with priority API
+GET http://localhost:3000/todos/?priority=HIGH
+###
+
+//Get todos with priority and status API
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+###
+
+//Get todos with search API
+GET http://localhost:3000/todos/?search_q=JS
+###
+
+//Get todo API
+GET http://localhost:3000/todos/2/
+###
+
+//Create todo API
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+  "id": 10,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO"
+}
+###
+
+//Update todo with status API
+PUT http://localhost:3000/todos/10/
+Content-Type: application/json
+
+{
+  "status": "DONE"
+}
+###
+
+//Update todo with priority API
+PUT http://localhost:3000/todos/10/
+Content-Type: application/json
+
+{
+  "priority": "HIGH"
+}
+###
+
+//Update todo with todo API
+PUT http://localhost:3000/todos/10/
+Content-Type: application/json
+
+{
+  "todo": "Website"
+}
+###
+
+//Delete todo API
+DELETE http://localhost:3000/todos/10/
+###
+
