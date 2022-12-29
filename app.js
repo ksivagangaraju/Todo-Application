@@ -36,9 +36,9 @@ app.get("/todos/", async (request, response) => {
     FROM
       todo
     WHERE
-      todo LIKE '%${search_q}%' AND
       priority LIKE '%${priority}%' AND
-      status LIKE '%${status}%';`;
+      status LIKE '%${status}%' AND
+      todo LIKE '%${search_q}%';`;
   const todos = await db.all(getTodosQuery);
   response.send(todos);
 });
